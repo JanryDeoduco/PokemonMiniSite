@@ -1,0 +1,257 @@
+*{
+    margin-left: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive;
+}
+
+
+.main {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to right, #ffff00, #13c036);
+    transition: background 0.3s ease; /* Corrected the property name */
+    
+  }
+  
+
+nav{
+    width: 80%;
+    position: sticky;
+    margin: 20px auto;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    
+}
+
+.logo{
+    flex-basis: 20%;
+
+}
+
+.logo img{
+    width: 150px;
+}
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.information{
+    width: 1000px;
+    height: 1000px;
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    transform: translateY(-50%);
+}
+
+#circle{
+    width: 1000px;
+    height: 1000px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    transform: rotate(0deg);
+    transition: 1s;
+    
+}
+
+
+
+.feature{
+    position: absolute;
+    
+    color: #fff;
+}
+
+.feature div{
+    margin-left: 100px;
+    
+    
+}
+
+.feature div h1{
+    position: relative;
+    font-size: 350%;
+    bottom: 90px;
+    -webkit-text-stroke: 2px black;
+    
+}
+
+
+#char{
+    top: 200px;
+    left: 800px;
+    transition: opacity 0.5s;
+}
+
+
+
+
+
+.charizard{
+    width: 500px;
+    cursor: pointer;
+}
+
+.charizardName{
+    left: 200px;
+}
+
+.fire{
+    position: relative;
+    width: 100px;
+    bottom: 100px;
+    left: 50px;
+    
+}
+
+.flying{
+    position: relative;
+    width: 100px;
+    bottom: 100px;
+    left: 60px;
+}
+
+.two{
+    top: 150px;
+    right: 350px;
+    transform: rotate(-90deg);
+    opacity: 0;
+}
+
+.blastoise{
+    position: relative;
+    width: 350px;
+    left: 550px;
+    top: 130px;
+    
+}
+
+#blast{
+    transition: opacity 0.5s; 
+}
+
+.blastName{
+    position: relative;
+    left: 450px;
+    top: 100px;
+}
+
+.water{
+    position: relative;
+    width: 100px;
+    top: 80px;
+    left: 560px;
+}
+
+.three{
+    top: 50px;
+    left: 50px;
+    transform: rotate(-180deg);
+}
+
+.venusaur{
+    position: relative;
+    width: 500px;
+    left: 400px;
+    bottom: 30px;
+
+}
+
+.venuName{
+    position: relative;
+    left: 400px;
+    top: -100px;
+}
+.grass{
+    position: relative;
+    width: 100px;
+    top: -160px;
+    left: 450px;
+}
+
+.poison{
+    position: relative;
+    width: 110px;
+    top: -143px;
+    left: 450px;
+}
+
+#venu{
+    transition: opacity 0.5s; 
+}
+
+
+.four{
+    opacity: 0;
+    bottom: 150px;
+    right: 350px;
+    transform: rotate(-270deg);
+}
+
+.mobile{
+    width: 400px;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    z-index: 1;
+    transition: 1s;
+}
+
+.controls{
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.controls h3{
+    margin: 20px 0;
+    color: #fff;
+}
+
+#upBtn{
+    width: 15px;
+    cursor: pointer;
+}
+
+#downBtn{
+    width: 15px;
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+.overlay{
+    width: 0;
+    height: 0;
+    border-top: 500px solid  #fff;
+    border-right: 500px solid transparent;
+    border-bottom: 500px solid  #fff;
+    border-left: 500px solid  #fff;
+    position: absolute;
+    left: 0;
+    top:0
+}
+
+#charCry{
+    position:absolute;
+    visibility: hidden;
+}

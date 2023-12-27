@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Website Design using HTML and CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="main">
+        <nav>
+            
+            <div class="logo">
+                <img src="images/pokemonTitle.png">
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Pokemon</a></li>
+                    <li><a href="#">Play</a></li>
+                </ul>
+            </div>
+            
+        </nav>
+
+        <div class="information">
+            <div class="overlay"></div>
+            <img src="images/pokeBall.png" class="mobile" id="mobile">
+            <div id="circle">
+                <div class="feature one" id="char">
+                    <img src="images/charizard.png" class="charizard" id="charizard">
+                    <audio id="charCry" controls>
+                        <source src="audio/charizard_cry.mp3" type="audio/mp3">
+                    </audio>
+                    <div>
+                        <h1>CHARIZARD</h1>
+                        <img src="images/fire.png" class="fire">
+                        <img src="images/flying.png" class="flying">
+                    </div>
+                </div>
+                <div class="feature two" id="blast">
+                    <img src="images/blastoise.png" class="blastoise">
+                    <div>
+                        <h1 class="blastName">BLASTOISE</h1>
+                        <img src="images/water.png" class="water">
+                    </div>
+                </div>
+                <div class="feature three" id="venu">
+                    <img src="images/venusaur.png" class="venusaur">
+                    <div>
+                        <h1 class="venuName">VENUSAUR</h1>
+                        <img src="images/grass.png" class="grass">
+                        <img src="images/poison.png" class="poison">
+                    </div>
+                </div>
+                <div class="feature four">
+                    <img src="images/battery.png">
+                    <div>
+                        <h1>Battery Life</h1>
+                        <p>5000 mAh,  720Hrs Standby</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <img src="images/arrow.png" id="upBtn">
+            <h3>Pokemon</h3>
+            <img src="images/arrow.png" id="downBtn">
+        </div>
+    </div>
+
+    <script>
+        var circle = document.getElementById("circle");
+        var mobile = document.getElementById("mobile");
+        var upBtn = document.getElementById("upBtn");
+        var downBtn = document.getElementById("downBtn");
+        var char = document.getElementById("char");
+        var blast = document.getElementById("blast");
+        var venu = document.getElementById("venu");
+
+        //button cry
+        var charizard = document.getElementById('charizard');
+        var charCry = document.getElementById('charCry');
+
+        charizard.onclick = function(){
+            charCry.play();
+        }
+
+        var rotateValue = circle.style.transform;
+        var rotateSum;
+        var charPos = 0; //charizard initial position
+        var blastPos = -3; //blastoise initial position
+        var venuPos = -2; //venusaur initial position
+
+        upBtn.onclick = function(){
+
+            if(venuPos == -2 || venuPos == 2 || venuPos % 2 == 0 && venuPos % 4 != 0){
+                rotateSum = rotateValue + "rotate(-180deg)";
+                circle.style.transform = rotateSum;
+                rotateValue = rotateSum;               
+                charPos++;
+                blastPos++;
+                venuPos++;
+            }
+            else{
+                rotateSum = rotateValue + "rotate(-90deg)";
+                circle.style.transform = rotateSum;
+                rotateValue = rotateSum;
+            }
+
+            mobile.style.transform = mobile.style.transform + "rotate(-360deg)";
+
+            charPos++;
+            blastPos++;
+            venuPos++;
+            console.log(charPos);
+            console.log(blastPos);
+            if(charPos == 0 || charPos % 4 == 0){
+                char.style.opacity = 1;
+            }
+            else{
+                char.style.opacity = 0;
+                
+            }
+
+            if(blastPos == 0 || blastPos % 4 == 0){
+                blast.style.opacity = 1;
+
+                
+            }
+
+            else if(blastPos == 1){
+                blast.style.opacity = 0;
+
+            }
+            else{
+                blast.style.opacity = 0;
+            }
+
+            if(venuPos == 0 || venuPos % 4 == 0){
+                venu.style.opacity = 1;
+            }
+            else{
+                venu.style.opacity = 0;
+            }
+        }
+
+        downBtn.onclick = function(){
+            if(venuPos == 0 || venuPos % 4 == 0){
+                rotateSum = rotateValue + "rotate(+180deg)";
+                circle.style.transform = rotateSum;
+                rotateValue = rotateSum;
+                venu.style.opacity = 0;
+                charPos--;
+                blastPos--;
+                venuPos--;
+            }
+            else{
+                rotateSum = rotateValue + "rotate(+90deg)";
+                circle.style.transform = rotateSum;
+                rotateValue = rotateSum;
+            }
+            mobile.style.transform = mobile.style.transform + "rotate(360deg)";
+            charPos--;
+            blastPos--;
+            venuPos--;
+            console.log(charPos);
+            if (charPos == 0 || charPos % 4 == 0) {
+                char.style.opacity = 1;
+                main.style.background = "linear-gradient(to right, #FFFF00, #FFF000)";
+            }
+
+            else{
+                char.style.opacity = 0;
+            }
+
+            if(blastPos == 0 || blastPos % 4 == 0){
+                blast.style.opacity = 1;
+            }
+            else{
+                blast.style.opacity = 0;
+            }
+
+            if(venuPos == 0 || venuPos % 4 == 0){
+                venu.style.opacity = 1;
+            }
+            else{
+                venu.style.opacity = 0;
+            }
+
+
+        }
+
+        
+
+    </script>
+
+</body>
+
+</html>
